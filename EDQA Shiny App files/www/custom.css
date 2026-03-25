@@ -1,0 +1,713 @@
+/* =========================
+   1. Fonts & Base Styles
+   ========================= */
+
+/* Source Sans Pro */
+@font-face {
+  font-family: "Source Sans Pro";
+  src: url("styles/SourceSansPro/SourceSansPro-Regular.woff") format("woff"),
+       url("styles/SourceSansPro/SourceSansPro-Regular.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Source Sans Pro";
+  src: url("styles/SourceSansPro/SourceSansPro-Bold.woff") format("woff"),
+       url("styles/SourceSansPro/SourceSansPro-Bold.woff2") format("woff2");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* GESIS icon font */
+@font-face {
+  font-family: "gesis-icons";
+  src: url("styles/gesis-icons.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+/* Global font family */
+* {
+  font-family: "Source Sans Pro";
+}
+
+body {
+  font-family: "Source Sans Pro";
+  font-size: 16px;
+  color: #292929;
+}
+
+/* Generic content padding */
+.content {
+  padding-top: 35px;
+}
+
+/* =========================
+   2. Typography & Elements
+   ========================= */
+
+/* Headings */
+h1 {
+  font-weight: bold;
+  font-size: 36px;
+  color: #003C78;
+}
+
+h2 {
+  font-weight: bold;
+  font-size: 28px;
+  color: #003C78;
+}
+
+h3:not(.box-title) {
+  font-weight: 500;
+  font-size: 24px;
+  color: #003C78;
+}
+
+/* Horizontal rule */
+hr {
+  border: 0;
+  border-top: 2px solid #A5D1E9;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Links */
+a {
+  color: #1E8CC8;
+  text-decoration: none;
+  box-shadow: inset 0 -1px 0 0 #1E8CC8;
+  transition: all 0.2s ease-in-out;
+}
+
+a:hover {
+  box-shadow: inset 0 -3px 0 0 rgba(30, 140, 200, 0.4);
+  color: #003C78;
+}
+
+/* =========================
+   3. Layout & Global Header
+   ========================= */
+
+/* Main content wrapper */
+.content-wrapper {
+  min-height: 100%;
+  background-color: #fff;
+  z-index: 800;
+  overflow: visible !important;
+}
+
+/* Full-width header above the Shiny page_navbar */
+.global-header {
+  width: 100%;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  padding: 0.75rem 1.5rem;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+  z-index: 1100;
+}
+
+/* Logo inside the header */
+.global-header-logo {
+  height: 64px;
+  width: auto;
+}
+
+/* Keep header and navbar attached */
+.navbar,
+.navbar-static-top,
+.navbar-default {
+  margin-top: 0;
+}
+
+.global-header + .navbar,
+.global-header + .bslib-page .navbar {
+  margin-top: 0;
+}
+
+/* Sticky main sidebar (used as analysis sidebar container) */
+.main-sidebar {
+  position: sticky;
+  overflow-x: hidden;
+  overflow-y: auto;
+  height: calc(100vh - 50px);
+  padding-top: 55px;
+  scrollbar-color: rgba(30, 140, 200, 0.5) transparent;
+  scrollbar-width: thin;
+}
+
+/* =========================
+   4. Navbar & Tabs
+   ========================= */
+
+/* Navbar title text */
+.navbar-title-text {
+  color: #1E8CC8;
+  font-weight: 600;
+}
+
+/* Navbar brand/title color */
+.navbar .navbar-brand,
+.navbar .navbar-brand .navbar-title-text {
+  color: #1E8CC8 !important;
+}
+
+/* Top-level navbar tabs */
+.navbar-nav .nav-link {
+  color: #d20064 !important;
+  font-weight: 700;
+  font-size: 1.0rem;
+  box-shadow: none !important;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link:focus {
+  color: #1E8CC8 !important;
+  font-weight: 700 !important;
+  box-shadow: none !important;
+}
+
+.navbar-nav .nav-link.active,
+.navbar-nav .nav-link.show {
+  color: #1E8CC8 !important;
+  font-weight: 700 !important;
+  box-shadow: none !important;
+}
+
+/* navset_card_underline tabs */
+.nav-underline .nav-link {
+  color: #642878;
+  box-shadow: none !important;
+}
+
+.nav-underline .nav-link:hover,
+.nav-underline .nav-link:focus {
+  color: #d20064;
+  box-shadow: none !important;
+}
+
+.nav-underline .nav-link.active {
+  color: #d20064;
+  font-weight: 700 !important;
+  box-shadow: none !important;
+}
+
+/* Generic Bootstrap nav-tabs (e.g. inside cards) */
+.nav-tabs .nav-link {
+  color: #003C78;
+}
+
+.nav-tabs .nav-link:hover {
+  color: #d20064;
+}
+
+.nav-tabs .nav-link.active,
+.nav-tabs .nav-item.show .nav-link {
+  color: #d20064;
+  border-color: #d20064 #ddd #fff;
+}
+
+/* =========================
+   5. Cards
+   ========================= */
+
+.card-body hr,
+.bslib-card .card-body hr {
+  border-top: 1px solid #A5D1E9;
+}
+
+.card,
+.bslib-card {
+  border: 1px solid #A5D1E9;
+  box-shadow: none !important;
+  border-radius: 6px;
+}
+
+.card-header,
+.bslib-card .card-header {
+  background-color: #F9DBE9;
+  border-bottom: 1px solid #d20064;
+  color: #642878;
+  font-weight: bold;
+}
+
+.card-header h5,
+.card-header h6,
+.bslib-card .card-header-title {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.card .card-body,
+.bslib-card .card-body {
+  padding-top: 0.25rem;
+  padding-bottom: 0.75rem;
+}
+
+.card .card-body > :first-child,
+.bslib-card .card-body > :first-child {
+  margin-top: 0;
+}
+
+/* =========================
+   6. Analysis Dashboard Sidebar
+   ========================= */
+
+.analysis-sidebar {
+  background-color: #F2F7FB !important;
+  border-right: 1px solid #A5D1E9;
+}
+
+.analysis-sidebar h5 {
+  color: #003C78;
+  font-weight: bold;
+}
+
+.analysis-sidebar p,
+.analysis-sidebar label {
+  color: #292929;
+  font-size: 0.9rem;
+}
+
+/* Wrapper for the file input (hide default input) */
+.analysis-sidebar .custom-file-input-wrapper .shiny-input-container {
+  position: relative;
+  height: 0;
+  overflow: hidden;
+}
+
+.analysis-sidebar .custom-file-input-wrapper input[type="file"] {
+  opacity: 0;
+  position: absolute;
+  pointer-events: none;
+}
+
+/* Layout for the custom “Browse” + filename display */
+.analysis-sidebar .custom-file-display {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.35rem;
+  margin-bottom: 0.75rem;
+}
+
+/* Custom Browse button */
+.analysis-sidebar .custom-browse-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  background-color: #F2F7FB;
+  color: #d20064;
+  border: 0.5px solid #F9DBE9;
+  border-radius: 999px;
+  border-bottom-color: #6DB4DB;
+  border-bottom-width: 1.5px;
+  padding: 0.25rem 0.75rem;
+  font-size: 0.9rem;
+  font-weight: 300;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  width: auto;
+  min-width: 0;
+}
+
+.analysis-sidebar .custom-browse-btn {
+  display: inline-flex !important;
+  width: auto !important;
+}
+
+/* Hover/focus state for custom Browse button */
+.analysis-sidebar .custom-browse-btn:hover,
+.analysis-sidebar .custom-browse-btn:focus {
+  color: #d20064;
+  border-color: #f6cce0;
+  background-color: #f6cce0;
+  border-radius: 999px;
+  border-bottom-color: #6DB4DB;
+  border-bottom-width: 3.25px;
+  box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  text-decoration: none;
+}
+
+/* Active state for custom Browse button */
+.analysis-sidebar .custom-browse-btn.active {
+  color: #d20064;
+  border-color: #f6cce0;
+  background: #f6cce0;
+  border-radius: 999px;
+  box-shadow: none;
+  border-bottom-color: #6DB4DB;
+  border-bottom-width: 3.25px;
+}
+
+/* Focus outline for accessibility */
+.analysis-sidebar .custom-browse-btn:focus-visible {
+  outline: 2px solid #642878;
+  outline-offset: 2px;
+}
+
+/* Filename display box */
+.analysis-sidebar #file-name-display {
+  width: 100%;
+  border: 1px solid #A5D1E9;
+  border-radius: 4px;
+  padding: 6px 8px;
+  font-size: 0.9rem;
+  color: #292929;
+  background-color: #ffffff;
+  min-height: 2rem;
+  display: flex;
+  align-items: center;
+}
+
+/* Download buttons in the sidebar */
+.sidebar-downloads .btn,
+.sidebar-downloads .btn-default,
+.sidebar-downloads .btn-primary {
+  font-size: 0.9rem !important;
+  padding: 6px 14px !important;
+  border-radius: 999px !important;
+  white-space: normal;
+  text-align: left;
+}
+
+/* Special styling for the combined ZIP download button */
+.sidebar-downloads .special-zip-button {
+  background-color: #1E8CC8 !important;
+  border-color: #1E8CC8 !important;
+  color: #ffffff !important;
+  font-weight: 600;
+}
+
+.sidebar-downloads .special-zip-button:hover {
+  background-color: #003C78 !important;
+  border-color: #003C78 !important;
+  color: #ffffff !important;
+}
+
+/* =========================
+   7. Accordions
+   ========================= */
+
+/* Coding Scheme accordion */
+.coding-accordion .accordion-item {
+  border-radius: 24px;
+  overflow: hidden;
+  border: 1px solid #A5D1E9;
+}
+
+.coding-accordion .accordion-button {
+  background-color: #1E8CC8 !important;
+  border-color: #1E8CC8 !important;
+  color: #ffffff !important;
+  font-size: 1.5rem;
+}
+
+.coding-accordion .accordion-button::after {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23ffffff'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+}
+
+/* Weight settings accordion */
+.weight-accordion .accordion-item {
+  border-radius: 24px;
+  overflow: hidden;
+  border: 1px solid #A5D1E9;
+}
+
+.weight-accordion .accordion-button {
+  background-color: #1E8CC8 !important;
+  border-color: #1E8CC8 !important;
+  color: #ffffff !important;
+}
+
+.weight-accordion .accordion-button::after {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23ffffff'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+}
+
+/* =========================
+   8. Responsive iframe helper
+   ========================= */
+
+.responsive {
+  width: 100%;
+  height: 700px;
+  position: relative;
+}
+
+.responsive iframe {
+  position: absolute;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+}
+
+/* =========================
+   9. GESIS Footer & Icons
+   ========================= */
+
+/* GESIS Footer Icons */
+[class^="gesis-icon-"],
+[class*=" gesis-icon-"] {
+  font-family: "gesis-icons" !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.gesis-icon-youtube:before {
+  content: "\e909";
+}
+.gesis-icon-mastodon:before {
+  content: "\e90b";
+}
+.gesis-icon-instagram:before {
+  content: "\e90d";
+}
+.gesis-icon-linkedin:before {
+  content: "\e90c";
+}
+.gesis-icon-facebook:before {
+  content: "\e90e";
+}
+
+/* GESIS Footer */
+footer {
+  position: relative;
+  z-index: 999;
+}
+
+footer a {
+  box-shadow: none;
+}
+
+footer a:hover {
+  box-shadow: none;
+}
+
+footer.page-footer {
+  background-color: #003C78;
+  border-top: 10px solid #d20064;
+  padding: 50px 0 100px;
+  color: #fff;
+}
+
+footer.page-footer .page-footer--inner {
+  max-width: 1600px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 33px;
+  padding-right: 33px;
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 992px) {
+  footer.page-footer .page-footer--inner {
+    display: grid;
+    grid-template-areas:
+      "contact-mannheim contact-koeln social-media"
+      "contact-mannheim contact-koeln leibniz-logo"
+      "contact-mannheim contact-koeln footer-nav";
+  }
+}
+
+footer.page-footer .page-footer--inner .contact-info a {
+  text-decoration: none;
+  color: inherit;
+  box-shadow: inset 0 -1px 0 0 #d20064;
+  transition: all 0.3s ease-in-out;
+}
+
+footer.page-footer .page-footer--inner .contact-info a:hover {
+  box-shadow: inset 0 -10px 0 0 rgba(210, 0, 100, 0.5);
+}
+
+footer.page-footer .page-footer--inner .contact-info.standort-mannheim {
+  grid-area: contact-mannheim;
+}
+
+footer.page-footer .page-footer--inner .contact-info.standort-koeln {
+  grid-area: contact-koeln;
+}
+
+footer.page-footer .page-footer--inner .social-media-icons,
+footer.page-footer .page-footer--inner .leibniz-logo-wrapper,
+footer.page-footer .page-footer--inner nav.footer {
+  justify-self: end;
+}
+
+footer.page-footer .page-footer--inner .social-media-icons {
+  grid-area: social-media;
+  margin-bottom: 20px;
+  font-size: calc(1.525rem + 3.3vw);
+}
+
+@media (min-width: 1200px) {
+  footer.page-footer .page-footer--inner .social-media-icons {
+    font-size: 4rem;
+  }
+}
+
+footer.page-footer .page-footer--inner .social-media-icons a {
+  color: inherit;
+  text-decoration: none;
+}
+
+footer.page-footer .page-footer--inner .social-media-icons a:hover {
+  color: #d20064;
+}
+
+footer.page-footer .page-footer--inner .social-media-icons a::after {
+  content: none;
+}
+
+footer.page-footer .page-footer--inner .social-media-icons i {
+  font-size: calc(1.385rem + 1.62vw);
+  margin-left: 0.2em;
+}
+
+@media (min-width: 1200px) {
+  footer.page-footer .page-footer--inner .social-media-icons i {
+    font-size: 2.6rem;
+  }
+}
+
+footer.page-footer .page-footer--inner .leibniz-logo-wrapper {
+  grid-area: leibniz-logo;
+  width: 150px;
+  max-width: 100%;
+  margin-bottom: 30px;
+}
+
+footer.page-footer .page-footer--inner .leibniz-logo-wrapper img {
+  width: 100%;
+}
+
+footer.page-footer .page-footer--inner nav.footer {
+  grid-area: footer-nav;
+}
+
+/* Footer should not shrink in flex layout */
+footer.page-footer {
+  flex-shrink: 0;
+}
+
+/* =========================
+   10. Generic Buttons
+   ========================= */
+
+/* Generic .btn-default style (used mainly for sidebar downloads) */
+.btn-default {
+  color: #d20064 !important;
+  border-color: #f6cce0 !important;
+  background: transparent;
+  border-radius: 999px !important;
+  font-size: 1.6rem !important;
+}
+
+.btn-default:hover {
+  color: #d20064;
+  border-color: #f6cce0;
+  background: #f6cce0;
+  border-radius: 999px;
+}
+
+.btn-default.active {
+  color: #d20064;
+  border-color: #f6cce0;
+  background: #f6cce0;
+  border-radius: 999px;
+  box-shadow: none;
+}
+
+.btn-default.active:hover {
+  color: #d20064;
+  border-color: #f6cce0;
+  background: #f6cce0;
+  border-radius: 999px;
+  box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+}
+
+/* =========================
+   11. Flex Layout & Plots
+   ========================= */
+
+/* Make the app use full-height flex layout so footer sits at bottom */
+html,
+body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+/* page_navbar() top-level container should flex-grow */
+body > .container-fluid,
+body > .bslib-page,
+body > .bslib-page-navbar {
+  flex: 1 0 auto;
+}
+
+/* Plot outputs */
+.shiny-plot-output {
+  max-height: 70vh;
+  width: 100%;
+}
+
+.card .card-body .shiny-plot-output,
+.bslib-card .card-body .shiny-plot-output {
+  object-fit: contain;
+}
+
+/* =========================
+   12. Media Queries
+   ========================= */
+
+/* Stack footer information on smaller screens */
+@media (max-width: 1250px) {
+  .footer-center,
+  .footer-right {
+    position: static !important;
+    transform: none !important;
+    text-align: center !important;
+    display: block;
+    margin-top: 5px;
+  }
+}
+
+/* Sidebar button widths on different screens */
+@media (min-width: 768px) {
+  .sidebar-downloads .btn,
+  .sidebar-downloads .btn-default,
+  .sidebar-downloads .btn-primary {
+    width: 100%;
+  }
+}
+
+@media (max-width: 767px) {
+  .sidebar-downloads .btn,
+  .sidebar-downloads .btn-default,
+  .sidebar-downloads .btn-primary {
+    width: 100%;
+  }
+}
+
+/* Give space for the header when sidebar opens on small screens */
+@media (max-width: 767px) {
+  .main-sidebar {
+    padding-top: 120px !important; /* Adjust to match header height */
+  }
+}

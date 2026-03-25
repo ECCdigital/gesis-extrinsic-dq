@@ -1,0 +1,24 @@
+"id","dta_fullname","doi_available","keywords_assigned","categories_assigned","temporal_info","spatial_info","access_url_accessible","download_url_given","download_url_accessible","downloadable_without_registration","file_format_documented","media_type_documented","controlled_vocabularies_usage","non_proprietary","machine_readability","license_documented","use_restrictions","contact_point","dataset_author","data_description","read_me_file","variable_documentation","raw_data","preprocessed_data","file_size","data_publication_date","data_modification_date","associated_publication"
+"001","Smartphone recorded driving sensor data: Leesburg, VA to Indianapolis, IN - Illinois Data Bank",1,1,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,1,1,0,0
+"002","Accelerometer and Gyroscope Sensor Readings for Writing Behavior Analysis - Mendeley Data",1,1,1,1,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,1,0,0,1,1,0,0
+"003","Sensor Data and Participants Profiles - Queen's University Dataverse Collection",1,1,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,NA,1,1,0,1
+"004","Smartphone Sensor Data of Indian Cities for Public Bus - Mendeley Data",1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,1,0,0,1,1,0,1
+"005","Smartphone Sensor Dataset",0,1,0,0,0,1,1,1,0,1,1,1,1,1,1,1,1,1,1,1,1,0,0,1,1,0,1
+"006","A Public Domain Dataset for Real-Life Human Activity Recognition Using Smartphone Sensors - Mendeley Data",1,1,1,1,0,1,1,1,1,1,1,1,1,1,1,1,0,1,1,1,1,1,1,1,1,1,1
+"007","Wild-SHARD: Smartphone Sensor-based Human Activity Recognition Dataset in Wild | IEEE DataPort",1,1,1,1,1,1,0,0,0,1,1,1,1,1,1,1,0,1,1,1,1,1,0,1,0,1,1
+"008","Inertia Sensors for Human Activity Recognition",0,1,0,1,1,1,1,1,0,1,1,1,1,1,1,1,0,1,1,0,1,0,1,1,1,0,0
+"009","Heterogeneity Human Activity Recognition Dataset",1,1,1,1,0,1,1,1,0,1,1,1,1,1,1,1,0,1,1,0,1,0,0,1,1,0,1
+"010","Human Activity Recognition Using Smartphones - UCI Machine Learning Repository",1,0,1,1,0,1,1,1,1,1,1,1,1,1,1,1,0,1,1,1,1,0,1,1,1,0,1
+"011","Bogazici University Smartphone Accelerometer Sensor Dataset - Mendeley Data",1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,1,1,0,1,0,0,1,1,1,1
+"012","Imputed dataset with accelerometer, gyroscope and magnetometer data for activities with motion - Mendeley Data",1,1,1,1,0,1,1,1,1,1,1,1,1,1,1,1,0,1,1,0,1,1,1,1,1,0,1
+"013","Data – Machine Learning for the Quantified Self",0,0,0,0,0,1,1,1,1,1,1,1,1,1,NA,NA,0,0,0,0,0,0,0,0,0,0,0
+"014","CRAWDAD jiit/accelerometer | IEEE DataPort",1,0,1,1,1,1,1,1,0,1,1,1,1,1,1,1,0,1,1,1,1,0,0,1,0,1,1
+"015","Tutorial - Cooking Activity Recognition Challenge",1,1,1,1,1,1,1,1,0,1,1,1,1,1,1,1,0,1,1,0,1,0,1,1,0,1,1
+"016","NJUPT Gait dataset | IEEE DataPort",1,1,1,1,1,1,1,1,0,1,1,1,1,1,1,1,0,1,1,0,1,1,0,1,0,1,0
+"017","Frontiers | Opportunity++: A Multimodal Dataset for Video- and Wearable, Object and Ambient Sensors-Based Human Activity Recognition",1,1,1,1,1,0,0,0,0,0,1,0,NA,0,1,1,1,1,1,1,1,0,1,0,0,0,1
+"018","WEEE - A multidevice and multimodal dataset for human energy expenditure estimation using wearable devices",1,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,1,1,1,1,0,0,1,1,0,1
+"019","HARSense: Statistical Human Activity Recognition Dataset | IEEE DataPort",1,1,1,1,1,1,1,1,0,1,1,1,1,1,1,1,0,1,1,1,1,0,1,1,0,1,1
+"020","WISDM Smartphone and Smartwatch Activity and Biometrics Dataset - UCI Machine Learning Repository",1,0,1,1,0,1,1,1,1,1,1,1,1,1,1,1,0,1,1,1,1,1,1,1,1,0,1
+"021","WISDM Lab: Dataset",0,1,1,1,1,1,1,1,1,1,1,0,1,1,NA,NA,0,1,1,1,1,1,1,0,0,1,1
+"022","WISDM Lab: Dataset",0,1,1,1,1,1,1,1,1,1,1,0,1,1,NA,NA,0,1,1,1,1,1,1,0,0,1,1
+"023","UniMiB-SHAR.zip",1,1,1,1,1,1,1,1,1,1,1,0,1,1,NA,NA,0,1,1,1,1,0,1,1,1,0,1

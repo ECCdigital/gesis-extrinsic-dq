@@ -1,0 +1,186 @@
+# Extrinsic Data Quality Assessment Tool (ShinyApp)
+
+Version: 1.0  
+Released: 2026-03-20  
+Authors: Vanessa Lux, Siyu Zhang  
+Tested with: R 4.4.4 on Windows  
+
+## Short Description
+
+The **Extrinsic Data Quality Assessment Tool** is a Shiny web application to quantitatively assess the _extrinsic_ data quality of research datasets based on their metadata and contextual information. It evaluates datasets across five dimensions:
+
+- **Findability**
+- **Accessibility**
+- **Interoperability**
+- **Reusability**
+- **Contextuality**
+
+The tool calculates dimension-level and overall scores using configurable weights and provides tables and visualizations to compare multiple datasets. The methodology adapts the [Metadata Quality Assessment (MQA)](https://data.europa.eu/mqa/methodology?locale=en) approach to the evaluation of individual datasets.
+
+---
+
+### Score Calculation and Weighting  
+
+The app calculates scores for the five extrinsic data quality dimensions **Findability**, **Accessibility**, **Interoperability**, **Reusability**, and **Contextuality**.
+
+Each dimension consists of several indicators (binary variables coded 0/1/NA). The app allows you to assign individual weights to the indicators in the **Analysis Dashboard**. To ensure comparability and to maintain the within-dimension structure, these raw indicator weights are normalized within each dimension so that they sum to 1; the dimension score for a given dataset is then computed as a weighted sum of its indicators.
+
+For the **overall score**, the app first sums the raw indicator weights within each dimension to obtain a raw weight for that dimension. These raw dimension weights are then normalized across all dimensions so that they sum to 1. The overall score is finally calculated as a weighted sum of the five dimension scores, using these normalized dimension weights.
+
+Changing an indicator’s weight affects both its contribution to its own dimension’s score and, via the dimension total, the relative importance of that dimension in the overall score.
+
+---
+
+### Input Data Format
+
+Input is a **CSV file** (comma or semicolon separated) where:
+
+- Each row represents one dataset to be assessed.
+- An optional `id` column can be used as the dataset label; if missing, the app generates labels such as “Dataset 1”, “Dataset 2”, etc.
+- Additional columns represent binary indicators (0/1/NA) following the coding scheme used in the app (e.g., `doi_available`, `keywords_assigned`, `license_documented`, etc.).
+
+The full coding scheme is documented in the app under the **“Coding Scheme”** tab, and a ready-to-use structure is provided in `coding_template.csv`.
+
+---
+
+### Typical Workflow in the App
+
+1. Start the app and open it in your browser.
+2. Review the **Introduction** and **Coding Scheme** tabs to understand the indicators and expected coding.
+3. Go to the **Analysis Dashboard**:
+   - Use the file upload control to upload your coded CSV.
+   - Choose the appropriate CSV delimiter (comma or semicolon).
+   - Optionally adjust **Weight Settings** in the sidebar for each dimension and indicator.
+4. Explore:
+   - **Score Table** – numeric scores per dataset and dimension.
+   - **Overall Score**, **Stacked Bar Plot**, **Dot Plot**, **Indicator Bar Plots**, **Dataset Bar Plots**.
+5. Use the **Download** buttons in the sidebar to export:
+   - Individual plots (PNG),
+   - Score table (CSV),
+   - Or a ZIP file containing both scores and plots.
+
+---
+
+## Online Access
+
+The app is available via a hosted Shiny server at:
+
+- https://shiny.gesis.org/extrinsic-dq/
+
+---
+
+## Running the App Locally
+
+### Requirements
+
+- **R**  
+  Tested with **R 4.4.4** on Windows.
+
+- **R packages**  
+  The app requires the following R packages: shiny, tidyverse, bslib, zip
+
+---
+
+### Setup 
+
+1. **Obtain the code and files**  
+   Clone or download the repository/folder and ensure the directory structure outlined below is preserved.
+
+2. **Install required R packages**
+
+   ```r
+   install.packages(c("shiny", "tidyverse", "bslib", "zip"))
+   ```
+
+3. **Set the working directory**  
+   In R or RStudio, set your working directory to the folder containing `app.R`:
+
+   ```r
+   setwd("/path/to/extrinsic-dq-app")
+   ```
+
+   **Important:** `app.R` must be in the working directory, and the app expects supporting files (`coding_template.csv`, `example_data.csv`, `footer.html`, and the `www` folder) to be in the locations shown in the directory structure.
+
+4. **Launch the app**  
+   From R/RStudio, run:
+
+   ```r
+   shiny::runApp("app.R")
+   ```
+
+   R will open a browser window automatically. If not, open the URL shown in the R console (e.g. `http://127.0.0.1:xxxx`).
+
+---
+  
+### Directory Structure
+
+To run the app locally, the directory structure should be:
+
+```text
+extrinsic-dq-app/
+├─ app.R                   # Main Shiny app script
+├─ coding_template.csv     # Coding template for users (required)
+├─ example_data.csv        # Example dataset used on app startup (optional)
+├─ footer.html             # HTML footer 
+└─ www/                    
+   ├─ custom.css           # Custom styles
+   ├─ logo_gesis_en.svg    
+   └─ styles/
+      ├─ leibniz_logo_de_white.svg
+      ├─ leibniz_logo_en_white.svg
+      ├─ gesis-icons.woff
+      └─ SourceSansPro/
+         ├─ SourceSansPro-Bold.woff
+         ├─ SourceSansPro-Bold.woff2
+         ├─ SourceSansPro-Bold-Italic.woff
+         ├─ SourceSansPro-Bold-Italic.woff2
+         ├─ SourceSansPro-Italic.woff
+         ├─ SourceSansPro-Italic.woff2
+         ├─ SourceSansPro-Light.woff
+         ├─ SourceSansPro-Light.woff2
+         ├─ SourceSansPro-Regular.woff
+         ├─ SourceSansPro-Regular.woff2
+         └─ SourceSansPro-SemiBold-600.woff2
+```
+
+##### Required for Normal Operation
+
+- `app.R` – must be present; this is the main script.
+- `coding_template.csv` – required for the **“Download Coding Template (CSV)”** button; the app expects it in the same directory as `app.R`.
+- `footer.html` – included via `includeHTML("footer.html")`; must be in the same directory as `app.R` to avoid UI errors.
+- `www` directory and its contents – required for correct styling, fonts, and logos. Missing or misplaced assets may break layout and branding.
+
+##### Optional
+
+- `example_data.csv` – used as default/example data on startup. If it is absent, the app will start without an example dataset (the user can still upload their own file).
+
+---
+
+## Citation
+
+If you use this tool in your work, please cite it as:
+
+Lux, Vanessa, & Zhang, Siyu (2026). *The Extrinsic Data Quality Assessment Tool (ShinyApp).*  
+Available at: https://shiny.gesis.org/extrinsic-dq/
+
+---
+
+## License
+
+#### Code
+
+Unless otherwise stated, the code in this repository is licensed under the **Creative Commons Attribution‑NonCommercial 4.0 International (CC BY‑NC 4.0)** license, permitting sharing and adaptation for **non‑commercial** purposes only, provided appropriate credit is given.
+
+For full details, see: https://creativecommons.org/licenses/by-nc/4.0/
+
+#### Logos
+
+The GESIS and Leibniz logos contained in this repository are protected trademarks and may not be reused, modified, or redistributed outside this application without prior written permission from the respective rights holders. These assets are provided solely for the purpose of running this application in its original institutional context. If you adapt or redistribute the app, please replace these logo files with your own logo or remove them.
+
+---
+
+## Contact
+
+For questions, feedback, or bug reports, please contact: 
+
+Vanessa Lux, IWH - Halle Institute for Economic Research Halle, Vanessa.Lux[at]iwh-halle[dot]de 
