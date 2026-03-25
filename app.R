@@ -179,7 +179,27 @@ ui <- tagList(
         }
       }
     });
-  "))
+  ")),
+    HTML(sprintf("
+      <!-- etracker code 6.0 -->
+      <script type='text/javascript'>
+         var et_pagename = '%s';
+         var et_areas    = '%s';
+      </script>
+      <script id='_etLoader'
+              type='text/javascript'
+              charset='UTF-8'
+              data-block-cookies='true'
+              data-secure-code='%s'
+              src='//code.etracker.com/code/e.js'
+              async>
+      </script>
+      <!-- etracker code 6.0 end -->
+      ",
+                 Sys.getenv('ET_PAGENAME'),
+                 Sys.getenv('ET_AREAS'),
+                 Sys.getenv('ET_SECURE_CODE')
+    ))
     ),
 
     ## -------- GLOBAL HEADER with GESIS logo --------
